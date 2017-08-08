@@ -18,6 +18,7 @@ EmitSignal::EmitSignal()
 	line1->move(100,50);
 	line2->resize(200,50);
 	line2->move(100,100);
+	line2->setEchoMode(QLineEdit::Password);
 
 	btn1 = new QPushButton(QObject::tr("登录"),this);
 	btn1->resize(50,50);

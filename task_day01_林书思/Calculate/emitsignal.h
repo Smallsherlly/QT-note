@@ -17,19 +17,26 @@ class EmitSignal:public QWidget
 {
 Q_OBJECT
 private:
-	QLabel *lab1;
-	QLabel *lab2;
+	double m_result;
+//	QLabel *lab[10];
 	QLineEdit *line1;
 	QLineEdit *line2;
-	QPushButton *btn1;
-	QPushButton *btn2;
+	QLineEdit *line3;
+	QPushButton *btn[5];
 public:
 	EmitSignal();
 	~EmitSignal();
 public slots:
-	bool login();
-public :signals:
-	void emitSig(QString qs);
+	void set1();
+	void set2();
+	void set3();
+	void set4();
+	void result1();
+	void result2();
+	void result3();
+	void result4();
+//public :signals:
+//	void emitSig(QString qs);
 };
 
 

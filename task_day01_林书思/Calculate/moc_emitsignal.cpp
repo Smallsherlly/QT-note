@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'emitsignal.h'
 **
-** Created: Tue Aug 8 19:11:39 2017
+** Created: Tue Aug 8 20:22:58 2017
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,25 +23,30 @@ static const uint qt_meta_data_EmitSignal[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
-
- // signals: signature, parameters, type, tag, flags
-      15,   12,   11,   11, 0x05,
+       0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      37,   11,   32,   11, 0x0a,
+      12,   11,   11,   11, 0x0a,
+      19,   11,   11,   11, 0x0a,
+      26,   11,   11,   11, 0x0a,
+      33,   11,   11,   11, 0x0a,
+      40,   11,   11,   11, 0x0a,
+      50,   11,   11,   11, 0x0a,
+      60,   11,   11,   11, 0x0a,
+      70,   11,   11,   11, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_EmitSignal[] = {
-    "EmitSignal\0\0qs\0emitSig(QString)\0bool\0"
-    "login()\0"
+    "EmitSignal\0\0set1()\0set2()\0set3()\0"
+    "set4()\0result1()\0result2()\0result3()\0"
+    "result4()\0"
 };
 
 void EmitSignal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -50,12 +55,18 @@ void EmitSignal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_ASSERT(staticMetaObject.cast(_o));
         EmitSignal *_t = static_cast<EmitSignal *>(_o);
         switch (_id) {
-        case 0: _t->emitSig((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: { bool _r = _t->login();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 0: _t->set1(); break;
+        case 1: _t->set2(); break;
+        case 2: _t->set3(); break;
+        case 3: _t->set4(); break;
+        case 4: _t->result1(); break;
+        case 5: _t->result2(); break;
+        case 6: _t->result3(); break;
+        case 7: _t->result4(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData EmitSignal::staticMetaObjectExtraData = {
@@ -90,17 +101,10 @@ int EmitSignal::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 8;
     }
     return _id;
-}
-
-// SIGNAL 0
-void EmitSignal::emitSig(QString _t1)
-{
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
-    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE
