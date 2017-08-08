@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QTextCodec>
 #include <QLineEdit>
+#include <QMessageBox>
 
 int main(int argc,char* argv[])
 {
@@ -37,6 +38,6 @@ int main(int argc,char* argv[])
 
 	wind.show();//显示窗口
 	QObject::connect(&btn2,SIGNAL(clicked()),&wind,SLOT(close()));//将按钮2的接收到的点击信号与槽连接
-
+	QObject::connect(&btn1,SIGNAL(clicked()),,SLOT());
 	return app.exec();
 }
