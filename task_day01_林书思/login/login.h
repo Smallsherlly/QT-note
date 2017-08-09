@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_Form:public QWidget
 {
 public:
     QLineEdit *edit1;
@@ -31,7 +31,10 @@ public:
     QLabel *lab2;
     QPushButton *btn1;
     QPushButton *btn2;
-
+	Ui_Form(QWidget* wid)
+	{
+		setupUi(wid);
+	}
     void setupUi(QWidget *Form)
     {
         if (Form->objectName().isEmpty())
