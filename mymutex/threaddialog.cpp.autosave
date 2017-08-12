@@ -1,0 +1,29 @@
+#include "threaddialog.h"
+#include "ui_threaddialog.h"
+
+ThreadDialog::ThreadDialog(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::ThreadDialog)
+{
+    ui->setupUi(this);
+}
+
+ThreadDialog::~ThreadDialog()
+{
+    delete ui;
+}
+
+void ThreadDialog::on_pushButton_3_clicked()
+{
+
+}
+
+void ThreadDialog::on_pushButton_2_clicked()
+{
+
+}
+
+void ThreadDialog::on_pushButton_clicked()
+{
+
+}

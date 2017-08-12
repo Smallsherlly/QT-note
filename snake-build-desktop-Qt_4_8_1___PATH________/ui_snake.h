@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'snake.ui'
 **
-** Created: Fri Aug 11 09:29:29 2017
+** Created: Fri Aug 11 10:31:53 2017
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -52,7 +52,7 @@ public:
     {
         if (snake->objectName().isEmpty())
             snake->setObjectName(QString::fromUtf8("snake"));
-        snake->resize(808, 570);
+        snake->resize(816, 601);
         centralWidget = new QWidget(snake);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -123,7 +123,7 @@ public:
         snake->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(snake);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 808, 26));
+        menuBar->setGeometry(QRect(0, 0, 816, 26));
         snake->setMenuBar(menuBar);
         mainToolBar = new QToolBar(snake);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));

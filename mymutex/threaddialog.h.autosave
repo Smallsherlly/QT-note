@@ -1,0 +1,29 @@
+#ifndef THREADDIALOG_H
+#define THREADDIALOG_H
+
+#include <QMainWindow>
+
+namespace Ui {
+class ThreadDialog;
+}
+
+class ThreadDialog : public QMainWindow
+{
+    Q_OBJECT
+    
+public:
+    explicit ThreadDialog(QWidget *parent = 0);
+    ~ThreadDialog();
+    
+private slots:
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
+private:
+    Ui::ThreadDialog *ui;
+};
+
+#endif // THREADDIALOG_H
