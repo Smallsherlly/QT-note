@@ -32,7 +32,7 @@ void udpClient::on_m_start_clicked()
         isStart = true;
         m_port = ui->port->text().toShort();
         qDebug() << m_port;
-        udp_socket->bind(QHostAddress::Broadcast,m_port);
+        udp_socket->bind(QHostAddress("10.0.2.15"),m_port);
         ui->m_start->setText("Stop receive!");
         ui->m_port->setEnabled(false);
 

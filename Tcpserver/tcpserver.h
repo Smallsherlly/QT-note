@@ -19,6 +19,16 @@ public:
     
 private:
     Ui::tcpserver *ui;
+    qint16 m_port;
+    QTcpServer* tcp_server;
+    QList<QTcpSocket*> socketList;
+signals:
+    void newMessage(QByteArray);
+public slots:
+    void socketConnect();
+    void on_m_create_clicked();
+    void socketReceiveMessage();
+    void sendMessage(QByteArray);
 };
 
 #endif // TCPSERVER_H

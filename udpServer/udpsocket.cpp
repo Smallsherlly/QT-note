@@ -51,5 +51,5 @@ void udpSocket::on_m_send_clicked()
         return ;
     }
 
-    udp_socket->writeDatagram(ui->m_message->text().toLocal8Bit(),QHostAddress::Broadcast,port);
+    udp_socket->writeDatagram(ui->m_message->text().toLocal8Bit(),QHostAddress("10.0.2.15"),port);
 }
