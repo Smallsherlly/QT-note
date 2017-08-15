@@ -90,7 +90,6 @@ int main(int argc, char *argv[])
         threadpool.start(task); 
         cout << "111111\n";     //线程池分配一个线程运行该任务  
       	sleep(1);  
-      	
     }  
     return a.exec();  
 }  

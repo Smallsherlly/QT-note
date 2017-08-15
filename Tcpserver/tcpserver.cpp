@@ -7,6 +7,7 @@ tcpserver::tcpserver(QWidget *parent) :
     ui(new Ui::tcpserver)
 {
     ui->setupUi(this);
+    isListen = false;
     tcp_server = new QTcpServer(this);
     connect(tcp_server,SIGNAL(newConnection()),this,SLOT(socketConnect()));
     connect(this,SIGNAL(newMessage(QByteArray)),this,SLOT(sendMessage(QByteArray)));
@@ -26,18 +27,29 @@ void tcpserver::socketConnect()
 
 void tcpserver::on_m_create_clicked()
 {
-    if(ui->m_port->text() == "")
+    if(!isListen)
     {
-        QMessageBox::information(this,"error","port is empty!");
-        return;
+        if(ui->m_port->text() == "")
+        {
+            QMessageBox::information(this,"error","port is empty!");
+            return;
+        }
+    //    QHostAddress address;
+    //    if(address.setScopeId(ui->m_port->text().toShort()))
+    //    {
+    //        QMessageBox::information(this,"error","create address failed!");
+    //        return;
+    //    }
+        qDebug() << ui->m_port->text().toShort();
+        tcp_server->listen(QHostAddress::Any,ui->m_port->text().toShort());
+        isListen = true;
+        ui->m_create->setText("close");
+    }else
+    {
+        isListen = false;
+        tcp_server->close();
+         ui->m_create->setText("create");
     }
-//    QHostAddress address;
-//    if(address.setScopeId(ui->m_port->text().toShort()))
-//    {
-//        QMessageBox::information(this,"error","create address failed!");
-//        return;
-//    }
-    tcp_server->listen(QHostAddress::Any,ui->m_port->text().toShort());
 }
 
 void tcpserver::socketReceiveMessage()

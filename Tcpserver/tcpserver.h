@@ -22,6 +22,7 @@ private:
     qint16 m_port;
     QTcpServer* tcp_server;
     QList<QTcpSocket*> socketList;
+    bool isListen;
 signals:
     void newMessage(QByteArray);
 public slots:

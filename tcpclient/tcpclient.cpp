@@ -35,12 +35,15 @@ void tcpclient::on_connect_clicked()
         }
         username = ui->username->text();
         m_port = ui->m_port->text().toShort();
+        qDebug()<<m_port;
+
         QString ip = ui->m_ip->text();
         if(!addressip.setAddress(ip))
         {
             QMessageBox::information(this,"error","ip error!");
             return;
         }
+        qDebug()<<addressip;
         //addressip = QHostAddress(ip);
         tcp_socket->connectToHost(addressip,m_port);
         QString msg = username+":join Chat Room";
@@ -54,11 +57,14 @@ void tcpclient::on_connect_clicked()
     {
         QString msg = username+":leave Chat Room";
         tcp_socket->write(msg.toLocal8Bit());
-        tcp_socket->disconnect();
+        tcp_socket->disconnectFromHost();
         tcp_socket->close();
         isConnect = false;
         ui->m_ip->setEnabled(true);
         ui->m_port->setEnabled(true);
+        ui->m_ip->clear();
+        ui->m_port->clear();
+        //ui->m_context->clear();
         ui->connect->setText("Connect");
         ui->m_send->setEnabled(false);
     }
